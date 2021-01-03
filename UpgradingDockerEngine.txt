@@ -1,0 +1,12 @@
+Upgrading the Docker Engine
+
+1.Downgrade to a previous version:
+i. sudo systemctl stop docker
+ii. sudo apt-get remove -y docker-ce docker-ce-cli
+iii. sudo apt-get update
+iv. sudo apt-get install -y docker-ce=5:18.09.4~3-0~ubuntu-bionic docker-ce-cli=5:18.09.4~3-0~ubuntu-bionic
+v. docker version
+
+2.Upgrade to a new version:
+i. sudo apt-get install -y docker-ce=5:18.09.5~3-0~ubuntu-bionic docker-ce-cli=5:18.09.5~3-0~ubuntu-bionic
+ii. docker version
