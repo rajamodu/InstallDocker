@@ -1,0 +1,15 @@
+Docker Swarm Backup and Restore in a Production Environment
+
+Docker Swarm Backup and Restore
+1. On the manager:
+i. sudo systemctl stop docker
+ii. sudo tar -zvcf backup.tar.gz /var/lib/docker/swarm
+iii. sudo systemctl start docker
+
+Restore from Backup
+1. On the manager:
+i. sudo systemctl stop docker
+ii. sudo rm -rf /var/lib/docker/swarm/*
+iii. sudo tar -zxvf backup.tar.gz -C /var/lib/docker/swarm/
+iv. sudo systemctl start docker
+v. docker node ls
